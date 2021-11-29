@@ -1,77 +1,82 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Card from '@mui/material/Card';
 import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
-import MenuIcon from '@mui/icons-material/Menu';
+import HomeIcon from '@mui/icons-material/Home';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import PersonIcon from '@mui/icons-material/Person';
+import GroupIcon from '@mui/icons-material/Group';
+import SettingsIcon from '@mui/icons-material/Settings';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-
+import Logo from '../assets/images/Logo.png'
+import Datatable from '../components/Datatable'
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
 
     const drawer = (
         <div>
-            <Toolbar />
+            <div style={{ flexGrow: 1, margin: 24, paddingTop: 10 }}>
+                <img src={Logo} alt="logo" />
+            </div>
+
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                {[{ name: 'Inicio', icon: <HomeIcon style={{ color: "black" }} /> },
+                { name: 'Tablero', icon: <DashboardIcon style={{ color: "black" }} /> },
+                { name: "Proyectos", icon: <AssessmentIcon style={{ color: "black" }} /> },
+                { name: "Empleados", icon: <PersonIcon style={{ color: "black" }} /> },
+                { name: "Equipos", icon: <GroupIcon style={{ color: "black" }} /> }]
+                    .map((item, index) => (
+                        <ListItem button key={index}>
+                            <ListItemIcon  >
+                                {item.icon}
+                            </ListItemIcon>
+                            <ListItemText primary={item.name} />
+                        </ListItem>
+                    ))}
             </List>
+            <Toolbar />
+            <Toolbar />
+
             <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                {[{ name: 'Ajustes', icon: <SettingsIcon style={{ color: "black" }} /> },
+                { name: 'Modo oscuro', icon: < DarkModeIcon style={{ color: "black" }} /> }]
+                    .map((item, index) => (
+                        <ListItem button key={index}>
+                            <ListItemIcon>
+                                {item.icon}
+                            </ListItemIcon>
+                            <ListItemText primary={item.name} />
+                        </ListItem>
+                    ))}
             </List>
         </div>
     );
 
-    const container = window !== undefined ? () => window().document.body : undefined;
 
+    const container = window !== undefined ? () => window().document.body : undefined;
     return (
         <Box sx={{ display: 'flex' }} style={{ backgroundColor: '#F3F5F9' }} >
             <CssBaseline />
             <Box
-
                 sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
                 aria-label="mailbox folders"
             >
-                {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-                <Drawer
-                    style={{ borderRadius: 20 }}
-                    container={container}
-                    open={mobileOpen}
-                    onClose={handleDrawerToggle}
+                <Drawer style={{ borderRadius: 20 }} container={container} open={mobileOpen} onClose={handleDrawerToggle}
                     ModalProps={{
-                        keepMounted: true, // Better open performance on mobile.
+                        keepMounted: true,
                     }}
                     sx={{
                         display: { xs: 'block', sm: 'none' },
@@ -93,58 +98,13 @@ function ResponsiveDrawer(props) {
                 </Drawer>
             </Box>
             <Box
+                height="100vh" display="flex" flexDirection="column"
                 component="main"
                 sx={{ flexGrow: 1, p: 2, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
-                <AppBar
-                    style={{ borderRadius: 10, padding: 8, backgroundColor: '#FFFEFF', boxShadow: 'box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;' }}
-                    position="sticky"
-                >
-                    <Toolbar  >
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            edge="start"
-                            onClick={handleDrawerToggle}
-                            sx={{ mr: 2, display: { sm: 'none' } }}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography variant="h6" noWrap component="div" style={{ color: '#333348' }}>
-                            Responsive drawer
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
-                <Card style={{ boxShadow: 'box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;', marginTop: 30, padding: 20, borderRadius: 20 }}>
-                    <Typography paragraph>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-                        enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-                        imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-                        Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-                        Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-                        adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-                        nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-                        leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-                        feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-                        consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-                        sapien faucibus et molestie ac.
-                    </Typography>
-                    <Typography paragraph>
-                        Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-                        eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-                        neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-                        tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-                        sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-                        tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-                        gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-                        et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-                        tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-                        eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-                        posuere sollicitudin aliquam ultrices sagittis orci a.
-                    </Typography>
-                </Card>
 
+                {/*Aqui va su contenido*/}
+                <Datatable data={handleDrawerToggle} />
             </Box>
         </Box>
     );
