@@ -17,6 +17,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import Toolbar from '@mui/material/Toolbar';
 import Logo from '../assets/images/Logo.png'
 import Datatable from '../components/Datatable'
+import KanbanBoard from '../components/KanbanBoard'
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
@@ -102,9 +103,9 @@ function ResponsiveDrawer(props) {
                 component="main"
                 sx={{ flexGrow: 1, p: 2, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
-
+                
                 {/*Aqui va su contenido*/}
-                <Datatable data={handleDrawerToggle} />
+                <KanbanBoard/>
             </Box>
         </Box>
     );
