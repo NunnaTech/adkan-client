@@ -16,7 +16,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import Toolbar from '@mui/material/Toolbar';
 import Logo from '../assets/images/Logo.png'
-import Datatable from '../components/Datatable'
+import Datatable from '../components/table/Datatable'
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
