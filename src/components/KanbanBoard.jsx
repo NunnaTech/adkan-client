@@ -11,7 +11,7 @@ import '@asseinfo/react-kanban/dist/styles.css'
 import "../components/KanbanStyles.css"
 import "../assets/js/KanbanStyles.js"
 
-const KanbanBoard = (state) => {
+const KanbanBoard = (onClick) => {
  
 
   const board = {
@@ -123,7 +123,7 @@ const KanbanBoard = (state) => {
             style={{ color: "black" }}
             aria-label="open drawer"
             edge="start"
-            onClick={state}
+            onClick={onClick}
             sx={{ mr: 2, display: { sm: "none" } }}
           >
             <MenuIcon />
