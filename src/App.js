@@ -1,8 +1,8 @@
-import DashbardProjects from './pages/DashboardProjects'
+import DashbardProjects from "./pages/DashboardProjects";
+import InfoProject from "./components/info/InfoProject";
+
 function App() {
-  return (
-    <DashbardProjects />
-  );
+  return <DashbardProjects />;
 }
 
 export default App;
