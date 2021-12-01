@@ -1,4 +1,4 @@
-import { Card, Grid, Typography, Icon } from "@material-ui/core";
+import { Card} from "@material-ui/core";
 import InfoSimple from "./InfoSimple";
 import InfoList from "./InfoList";
 

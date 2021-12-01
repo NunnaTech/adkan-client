@@ -1,5 +1,5 @@
 import CardOne from "./CardOne";
-import { Grid, Typography, Button } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
 const GridCards = ({ info }) => {
   return (

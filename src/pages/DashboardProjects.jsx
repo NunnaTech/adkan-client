@@ -18,10 +18,18 @@ import Toolbar from "@mui/material/Toolbar";
 import Logo from "../assets/images/Logo.png";
 import Datatable from "../components/table/Datatable";
 import InfoProject from "../components/info/InfoProject";
-
+import KanbanBoard from '../components/KanbanBoard'
+import Home from "../components/home/Home";
+import { useNavigate } from "react-router-dom";
+import {
+  Routes,
+  Route
+} from "react-router-dom";
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
+  const navigate = useNavigate();
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const handleDrawerToggle = () => {
@@ -36,22 +44,33 @@ function ResponsiveDrawer(props) {
 
       <List>
         {[
-          { name: "Inicio", icon: <HomeIcon style={{ color: "black" }} /> },
+          {
+            name: "Inicio",
+            icon: <HomeIcon style={{ color: "black" }} />,
+            path: "/"
+          },
           {
             name: "Tablero",
             icon: <DashboardIcon style={{ color: "black" }} />,
+            path: "/dashboardProject"
           },
           {
             name: "Proyectos",
             icon: <AssessmentIcon style={{ color: "black" }} />,
+            path: "/tableProject"
           },
           {
             name: "Empleados",
             icon: <PersonIcon style={{ color: "black" }} />,
+            path: "/projectDetail"
           },
-          { name: "Equipos", icon: <GroupIcon style={{ color: "black" }} /> },
+          {
+            name: "Equipos",
+            icon: <GroupIcon style={{ color: "black" }} />,
+            path: "/projectDetail"
+          },
         ].map((item, index) => (
-          <ListItem button key={index}>
+          <ListItem onClick={() => { navigate(item.path) }} button key={index}>
             <ListItemIcon>{item.icon}</ListItemIcon>
             <ListItemText primary={item.name} />
           </ListItem>
@@ -134,7 +153,12 @@ function ResponsiveDrawer(props) {
         }}
       >
         {/*Aqui va su contenido*/}
-        
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/tableProject" element={<Datatable />} />
+          <Route path="/projectDetail" element={<InfoProject />} />
+          <Route path="/dashboardProject" element={<KanbanBoard />} />
+        </Routes>
       </Box>
     </Box>
   );

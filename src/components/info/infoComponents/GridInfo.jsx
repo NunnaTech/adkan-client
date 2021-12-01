@@ -6,19 +6,19 @@ import GridCards from "./GridCards";
 const GridInfo = () => {
   const [color, setColor] = useState("");
 
-  useEffect(()=>{
-    if(infoProject.status.type===1){
+  useEffect(() => {
+    if (infoProject.status.type === 1) {
       setColor("#898989")
-    }else if(infoProject.status.type===2){
+    } else if (infoProject.status.type === 2) {
       setColor("#FDB441")
-    }else if(infoProject.status.type===3){
+    } else if (infoProject.status.type === 3) {
       setColor("#FF220C")
-    }else if(infoProject.status.type===4){
+    } else if (infoProject.status.type === 4) {
       setColor("#6AB547")
-    }else if(infoProject.status.type===5){
+    } else if (infoProject.status.type === 5) {
       setColor("#343434")
     }
-  },[])
+  }, [])
 
   return (
     <Grid
@@ -31,23 +31,27 @@ const GridInfo = () => {
         <Typography variant="h6">Descripción</Typography>
         <Typography variant="body2">{infoProject.description}</Typography>
       </Grid>
-      <Grid item xs={3} style={{marginLeft:10}}>
+      <Grid item xs={3} style={{ marginLeft: 10 }}>
         <Typography variant="h6">Estado</Typography>
-        <Button
-          variant="contained"
+
+        <Typography
           style={{
             backgroundColor: `${color}`,
             color: "white",
             width: 200,
+            padding: 10,
+            textAlign: "center",
             borderRadius: 10,
           }}
         >
           {infoProject.status.name}
-        </Button>
+        </Typography>
+
       </Grid>
-      <GridCards info={infoProject}/>
+      <GridCards info={infoProject} />
     </Grid>
   );
 };
 
 export default GridInfo;
+

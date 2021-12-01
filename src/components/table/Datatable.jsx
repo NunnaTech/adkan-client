@@ -13,7 +13,6 @@ import Table from 'react-data-table-component';
 import data from './data'
 import columns from './columns'
 import customStyles from './customStyles'
-import Container from '@mui/material/Container';
 
 const FilterComponent = ({ filterText, onFilter, onClear }) => (
     <>
