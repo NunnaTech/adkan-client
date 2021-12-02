@@ -7,7 +7,7 @@ const InfoProject = () => {
   return (
     <Container >
       <InfoAppBar name={infoProject.nameProject} shortName={infoProject.shortName} />
-      <Card>
+      <Card style={{borderRadius:20}}>
         <GridInfo />
       </Card>
     </Container>
