@@ -9,6 +9,7 @@ const InfoAppBar = ({ name, shortName }) => {
         backgroundColor: "#FFFEFF",
         boxShadow: "box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;",
         marginBottom: 20,
+        borderLeft: "8px solid #0094c7"
       }}
       position="sticky"
     >
@@ -33,10 +34,10 @@ const InfoAppBar = ({ name, shortName }) => {
                 color: "white",
                 width: 250,
                 borderRadius: 10,
-                marginTop:10,
+                marginTop: 10,
               }}
             >
-             <Icon style={{marginRight:10}}>dashboard</Icon>Ver tablero Kanban
+              <Icon style={{ marginRight: 10 }}>dashboard</Icon>Ver tablero Kanban
             </Button>
           </Grid>
         </Grid>

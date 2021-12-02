@@ -3,7 +3,6 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import AppBar from "@mui/material/AppBar";
 import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
 import Toolbar from "@mui/material/Toolbar";
 import MenuIcon from "@mui/icons-material/Menu";
 import Board from "@asseinfo/react-kanban";
@@ -12,7 +11,7 @@ import "../components/KanbanStyles.css"
 import "../assets/js/KanbanStyles.js"
 
 const KanbanBoard = (onClick) => {
- 
+
 
   const board = {
     columns: [
@@ -52,7 +51,7 @@ const KanbanBoard = (onClick) => {
             title: "Gestor de Nóminas",
             description: "GENO",
           },
-         
+
         ],
       },
       {
@@ -80,7 +79,7 @@ const KanbanBoard = (onClick) => {
             title: "Aplicación de Productos Digitales",
             description: "APRO",
           },
-          
+
         ],
       },
     ],
@@ -88,7 +87,7 @@ const KanbanBoard = (onClick) => {
 
   function KanbanBoard() {
     return (
-      <Board                  
+      <Board
         allowRemoveLane
         allowRemoveCard
         disableColumnDrag
@@ -115,6 +114,7 @@ const KanbanBoard = (onClick) => {
           padding: 8,
           backgroundColor: "#FFFEFF",
           boxShadow: "box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;",
+          borderLeft: "8px solid #0094c7"
         }}
         position="sticky"
       >
@@ -140,20 +140,26 @@ const KanbanBoard = (onClick) => {
                 Tablero de Proyectos
               </Typography>
             </Grid>
+            <Grid item xs={8}>
+              <Typography variant="h6" noWrap component="div" style={{ color: '#333348', }}>
+                Estados actuales
+              </Typography>
+            </Grid>
           </Grid>
         </Toolbar>
       </AppBar>
 
-      <Card
+      <div
         style={{
-          boxShadow: "box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;",
+          boxShadow: "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
           marginTop: 30,
           padding: 20,
           borderRadius: 20,
+          backgroundColor: '#FFFFFF'
         }}
       >
         <KanbanBoard />
-      </Card>
+      </div>
     </>
   );
 };
