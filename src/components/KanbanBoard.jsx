@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import AppBar from "@mui/material/AppBar";
@@ -7,13 +7,14 @@ import Card from "@mui/material/Card";
 import Toolbar from "@mui/material/Toolbar";
 import MenuIcon from "@mui/icons-material/Menu";
 import Board from "@asseinfo/react-kanban";
-import '@asseinfo/react-kanban/dist/styles.css'
-import "../components/KanbanStyles.css"
-import "../assets/js/KanbanStyles.js"
+import "@asseinfo/react-kanban/dist/styles.css";
+import "../components/KanbanStyles.css";
+import loadStyles from "../assets/js/KanbanStyles.js";
 
 const KanbanBoard = (onClick) => {
- 
-
+  useEffect(() => {
+    loadStyles();
+  }, []);
   const board = {
     columns: [
       {
@@ -52,7 +53,6 @@ const KanbanBoard = (onClick) => {
             title: "Gestor de Nóminas",
             description: "GENO",
           },
-         
         ],
       },
       {
@@ -80,7 +80,6 @@ const KanbanBoard = (onClick) => {
             title: "Aplicación de Productos Digitales",
             description: "APRO",
           },
-          
         ],
       },
     ],
@@ -88,7 +87,7 @@ const KanbanBoard = (onClick) => {
 
   function KanbanBoard() {
     return (
-      <Board                  
+      <Board
         allowRemoveLane
         allowRemoveCard
         disableColumnDrag
@@ -96,7 +95,6 @@ const KanbanBoard = (onClick) => {
         onCardRemove={console.log}
         onLaneRename={console.log}
         initialBoard={board}
-
         allowAddCard={{ on: "bottom" }}
         onNewCardConfirm={(draftCard) => ({
           id: new Date().getTime(),
@@ -157,6 +155,5 @@ const KanbanBoard = (onClick) => {
     </>
   );
 };
-
 
 export default KanbanBoard;

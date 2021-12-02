@@ -5,6 +5,7 @@
 
 .react-kanban-board {
   padding: 20px 0px 20px 0px;
+  overflow-y: auto;
 }
 
 .react-kanban-column {
