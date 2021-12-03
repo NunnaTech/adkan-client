@@ -20,14 +20,14 @@ const InfoAppBar = ({ name, shortName }) => {
           rowSpacing={4}
           columnSpacing={{ xs: 12, sm: 12, md: 12 }}
         >
-          <Grid item xs={8}>
+          <Grid item xs={10}>
             <Typography
               variant="h5"
               style={{ color: "#333348", fontWeight: "bolder" }}
             >{`Proyecto ${name}`}</Typography>
             <Typography variant="h6">{`${shortName} - Detalles`}</Typography>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={2}>
             <Link
               to="/KanbanBoardUserHistory"
               style={{ textDecoration: "none" }}

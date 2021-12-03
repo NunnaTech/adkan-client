@@ -37,7 +37,7 @@ const Home = (state) => {
                         </Grid>
 
                     </Grid>
-                    <img src={Logo} />
+                    <img src={Logo} alt="Logo ADKAN" />
                 </Toolbar>
             </AppBar>
             <div style={{ boxShadow: "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)", marginTop: 30, padding: 20, borderRadius: 20, backgroundColor: '#FFFFFF', borderLeft: "8px solid #0094c7" }}>

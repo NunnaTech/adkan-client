@@ -1,4 +1,4 @@
-import { Grid, Typography, Button } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { infoProject } from "../infoUtilities/Info";
 import GridCards from "./GridCards";
@@ -29,7 +29,7 @@ const GridInfo = () => {
     >
       <Grid item xs={7}>
         <Typography variant="h6">Descripción</Typography>
-        <Typography variant="body2">{infoProject.description}</Typography>
+        <Typography variant="body2" style={{textAlign:'justify'}}>{infoProject.description}</Typography>
       </Grid>
       <Grid item xs={3} style={{ marginLeft: 10 }}>
         <Typography variant="h6">Estado</Typography>
