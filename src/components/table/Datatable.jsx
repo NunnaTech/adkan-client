@@ -4,7 +4,6 @@ import IconButton from '@mui/material/IconButton';
 import AppBar from '@mui/material/AppBar';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
 import Toolbar from '@mui/material/Toolbar';
 import TextField from '@material-ui/core/TextField';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -48,12 +47,12 @@ const Datatable = (state) => {
     return (
         <>
             <AppBar
-                style={{ borderRadius: 10, padding: 8, backgroundColor: '#FFFEFF', boxShadow: 'box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;' }}
+                style={{ borderRadius: 10, padding: 8, backgroundColor: '#FFFEFF', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px;',borderLeft: "8px solid #0094c7" }}
                 position="sticky"
             >
                 <Toolbar  >
                     <IconButton
-                        style={{ color: 'black' }}
+                        style={{ color: 'black', }}
                         aria-label="open drawer"
                         edge="start"
                         onClick={state}
@@ -78,9 +77,9 @@ const Datatable = (state) => {
             </AppBar>
 
 
-            <Card style={{ boxShadow: 'box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;', marginTop: 30, padding: 20, borderRadius: 20, }}>
+            <div style={{ boxShadow: "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)", marginTop: 30, padding: 20, borderRadius: 20, backgroundColor: '#FFFFFF' }}>
                 <Table
-                    style={{height: '100%'}}
+                    style={{ height: '100%' }}
                     columns={columns}
                     data={filteredItems}
                     pagination
@@ -92,7 +91,7 @@ const Datatable = (state) => {
                     subHeaderComponent={subHeaderComponentMemo}
                     persistTableHead
                 />
-            </Card>
+            </div>
         </>
     )
 }
