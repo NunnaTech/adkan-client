@@ -19,6 +19,7 @@ import Logo from "../assets/images/Logo.png";
 import Datatable from "../components/table/Datatable";
 import InfoProject from "../components/info/InfoProject";
 import KanbanBoard from '../components/KanbanBoard'
+import KanbanBoardUserHistory from '../components/KanbanBoardUserHistory'
 import Home from "../components/home/Home";
 import { useNavigate } from "react-router-dom";
 import {
@@ -158,6 +159,7 @@ function ResponsiveDrawer(props) {
           <Route path="/tableProject" element={<Datatable />} />
           <Route path="/projectDetail" element={<InfoProject />} />
           <Route path="/dashboardProject" element={<KanbanBoard />} />
+          <Route path="/KanbanBoardUserHistory" element={<KanbanBoardUserHistory />} />
         </Routes>
       </Box>
     </Box>

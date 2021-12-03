@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { AppBar, Toolbar, Grid, Typography, Button, Icon } from "@mui/material";
 
 const InfoAppBar = ({ name, shortName }) => {
@@ -9,7 +10,7 @@ const InfoAppBar = ({ name, shortName }) => {
         backgroundColor: "#FFFEFF",
         boxShadow: "box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;",
         marginBottom: 20,
-        borderLeft: "8px solid #0094c7"
+        borderLeft: "8px solid #0094c7",
       }}
       position="sticky"
     >
@@ -27,18 +28,24 @@ const InfoAppBar = ({ name, shortName }) => {
             <Typography variant="h6">{`${shortName} - Detalles`}</Typography>
           </Grid>
           <Grid item xs={3}>
-            <Button
-              variant="contained"
-              style={{
-                backgroundColor: `#018EC1`,
-                color: "white",
-                width: 250,
-                borderRadius: 10,
-                marginTop: 10,
-              }}
+            <Link
+              to="/KanbanBoardUserHistory"
+              style={{ textDecoration: "none" }}
             >
-              <Icon style={{ marginRight: 10 }}>dashboard</Icon>Ver tablero Kanban
-            </Button>
+              <Button
+                variant="contained"
+                style={{
+                  backgroundColor: `#018EC1`,
+                  color: "white",
+                  width: 250,
+                  borderRadius: 10,
+                  marginTop: 10,                 
+                }}
+              >
+                <Icon style={{ marginRight: 10 }}>dashboard</Icon>Ver tablero
+                Kanban
+              </Button>
+            </Link>
           </Grid>
         </Grid>
       </Toolbar>
