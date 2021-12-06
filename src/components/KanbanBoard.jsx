@@ -91,6 +91,8 @@ const KanbanBoard = () => {
       <Board
       allowRemoveLane
       allowRemoveCard
+      disableColumnDrag
+      disableCardDrag
       initialBoard={board}
       renderCard={CardProject}
       />
@@ -120,7 +122,7 @@ const KanbanBoard = () => {
               <Typography
                 variant="h5"
                 style={{ color: "#333348", fontWeight: "bolder", marginTop:15 }}
-              >{`Tablero de proyectos`}</Typography>
+              >{`Tablero de Proyectos`}</Typography>
             </Grid>
             <Grid item xs={2}>
               <Typography
@@ -138,7 +140,7 @@ const KanbanBoard = () => {
                 }}
               >
                 <Icon style={{ fontWeight: "bold", paddingTop: 6 }}>add</Icon>{" "}
-                Nueva Historia
+                Nuevo Proyecto
               </Typography>
             </Grid>
           </Grid>

@@ -32,7 +32,7 @@ const Home = (state) => {
                         </Grid>
                         <Grid item xs={8}>
                             <Typography variant="h5" noWrap component="div" style={{ color: '#333348', }}>
-                                Administrador de proyectos kanban
+                                Administrador de Proyectos Kanban
                             </Typography>
                         </Grid>
 
@@ -51,7 +51,7 @@ const Home = (state) => {
                     <Grid xs={8}>
 
                         <Typography variant="h6" noWrap component="div" style={{ color: '#333348', }}>
-                            - Héctor Saldaña Espinoza
+                            - Hector Saldaña Espinoza
                         </Typography>
                     </Grid>
                     <Grid item xs={8}>
@@ -61,12 +61,12 @@ const Home = (state) => {
                     </Grid>
                     <Grid item xs={8}>
                         <Typography variant="h6" noWrap component="div" style={{ color: '#333348', }}>
-                            - Luis Enrique Alvárez Ortiz
+                            - Luis Enrique Álvarez Ortiz
                         </Typography>
                     </Grid>
                     <Grid item xs={8}>
                         <Typography variant="h6" noWrap component="div" style={{ color: '#333348', }}>
-                            - José Manuel Rodriguéz Pavón
+                            - José Manuel Rodriguez Pavón
                         </Typography>
                     </Grid>
                     <Grid item xs={8}>
@@ -80,7 +80,6 @@ const Home = (state) => {
                         </Typography>
                     </Grid>
                 </Grid>
-
             </div>
         </>
     )

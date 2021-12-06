@@ -64,7 +64,7 @@ const Datatable = (state) => {
                     <Grid container spacing={0} columns={1}>
                         <Grid item xs={8}>
                             <Typography variant="h5" noWrap component="div" style={{ color: '#333348', fontWeight: 'bolder' }}>
-                                Lista de proyectos
+                                Lista de Proyectos
                             </Typography>
                         </Grid>
                         <Grid item xs={8}>
