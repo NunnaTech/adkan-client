@@ -10,9 +10,10 @@ let infoProject = {
     productOwner: "Bernado Huicochea",
     scrumMaster: "Claudio Lopez",
     historyUser: [
-        { name: "Modulo Docentes" },
-        { name: "Modulo Inicio Sesión" },
-        { name: "Generador de reportes" },
+        { name: "Módulo Estudiantes" },
+        { name: "Módulo Docentes" },
+        { name: "Módulo Inicio de Sesión" },
+        
     ],
     developmentTeam: [
         { name: "Carlos Juan" },

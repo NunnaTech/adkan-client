@@ -41,9 +41,9 @@ const KanbanBoardUserHistory = () => {
             id: 1,
             title: "Módulo estudiantes",
             description: "Elaborar el módulo del CRUD de los estudiantes",
-            status: "",
-            color: "",
-            dates: "",
+            status: "Análisis",
+            color: "#FF220C",
+            dates: "Fechas Planeadas: 10/11/2021 al 13/11/2021",
           },
         ],
       },
@@ -57,7 +57,7 @@ const KanbanBoardUserHistory = () => {
             description: "Elaborar el módulo del CRUD de los docentes",
             status: "Análisis",
             color: "#FF220C",
-            dates: "Fechas: 13/11/2021 al 14/11/2021",
+            dates: "Fechas Planeadas: 13/11/2021 al 14/11/2021",
           },
           {
             id: 3,
@@ -66,7 +66,7 @@ const KanbanBoardUserHistory = () => {
               "Elaborar y probar el inicio de sesión con autenticación a Google",
             status: "Programación",
             color: "#F2BB05",
-            dates: "Fechas: 11/11/2021 al 11/11/2021",
+            dates: "Fechas Planeadas: 11/11/2021 al 11/11/2021",
           },
           {
             id: 5,
@@ -74,8 +74,8 @@ const KanbanBoardUserHistory = () => {
             description:
               "Implementación y diseño de reportes con datatables e impresiones en PDF",
             status: "Diseño",
-            color: "#F5B100",
-            dates: "Fechas: 12/11/2021 al 12/11/2021",
+            color: "#ff9235",
+            dates: "Fechas Planeadas: 12/11/2021 al 12/11/2021",
           },
         ],
       },
@@ -90,7 +90,7 @@ const KanbanBoardUserHistory = () => {
               "Elaborar el boceto de todas las pantallas a intereractuar",
             status: "Test",
             color: "#6AB547",
-            dates: "Fechas: 14/10/2021 al l4/10/2021",
+            dates: "Fechas Planeadas: 14/10/2021 al 14/10/2021",
           },
         ],
       },
@@ -103,9 +103,9 @@ const KanbanBoardUserHistory = () => {
             title: "Módulo de RENAPO",
             description:
               "Implementar la consulta de CURPs de los estudiantes en renapo",
-            status: "Cancelado",
-            color: "#969696",
-            dates: "Fechas: 09/10/2021 al l2/10/2021",
+            status: "Test",
+            color: "#6AB547",
+            dates: "Fechas Planeadas: 09/10/2021 al 12/10/2021",
           },
         ],
       },
@@ -208,13 +208,13 @@ const KanbanBoardUserHistory = () => {
             />
             <Box sx={{ minWidth: 180 }} style={{ margin: 10 }}>
               <FormControl variant="standard" fullWidth>
-                <InputLabel id="demo-simple-select-label">Fase</InputLabel>
+                <InputLabel id="demo-simple-select-label">Estatus</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
-                  value={fase}
+                  value={estatus}
                   label="Planeación"
-                  onChange={(event) => setFase(event.target.value)}
+                  onChange={(event) => setEstatus(event.target.value)}
                 >
                   <MenuItem value={1}>Pendiente</MenuItem>
                   <MenuItem value={2}>Ejecución</MenuItem>
@@ -225,19 +225,18 @@ const KanbanBoardUserHistory = () => {
             </Box>
             <Box sx={{ minWidth: 180 }} style={{ margin: 10 }}>
               <FormControl variant="standard" fullWidth>
-                <InputLabel id="demo-simple-select-label">Estatus</InputLabel>
+                <InputLabel id="demo-simple-select-label">Fase</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
-                  value={estatus}
+                  value={fase}
                   label="Analisis"
-                  onChange={(event) => setEstatus(event.target.value)}
+                  onChange={(event) => setFase(event.target.value)}
                 >
                   <MenuItem value={1}>Analisis</MenuItem>
                   <MenuItem value={2}>Diseño</MenuItem>
                   <MenuItem value={3}>Programación</MenuItem>
-                  <MenuItem value={4}>Test</MenuItem>
-                  <MenuItem value={5}>Cancelado</MenuItem>
+                  <MenuItem value={4}>Test</MenuItem>                 
                 </Select>
               </FormControl>
             </Box>
