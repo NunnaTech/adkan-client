@@ -13,7 +13,7 @@
     border-radius: 10px;
     border: 1px solid #333348;
     /* Arriba | Derecha | Abajo | Izquierda */
-    margin: 0px 18px 0px 19px;
+    margin: 0px 15px 0px 15px;
   }
   
   .react-kanban-card {
