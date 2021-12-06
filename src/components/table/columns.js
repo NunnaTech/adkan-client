@@ -83,7 +83,7 @@ const columns = [
     },
     {
         cell: () =>
-            <IconButton aria-label="delete" onClick={()=>{alert("XD")}}>
+            <IconButton aria-label="delete">
                 <DeleteIcon />
             </IconButton>,
         ignoreRowClick: false,

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
+import {Icon} from "@material-ui/core";
 import AppBar from "@mui/material/AppBar";
 import Grid from "@mui/material/Grid";
 import Toolbar from "@mui/material/Toolbar";
@@ -9,11 +9,13 @@ import Board from "@asseinfo/react-kanban";
 import "@asseinfo/react-kanban/dist/styles.css";
 import "../components/KanbanStyles.css";
 import loadStyles from "../assets/js/KanbanStyles.js";
+import CardProject from '../components/CardProject';
 
-const KanbanBoard = (onClick) => {
+const KanbanBoard = () => {
   useEffect(() => {
     loadStyles();
   }, []);
+
   const board = {
     columns: [
       {
@@ -87,19 +89,10 @@ const KanbanBoard = (onClick) => {
   function KanbanBoard() {
     return (
       <Board
-        allowRemoveLane
-        allowRemoveCard
-        disableColumnDrag
-        onLaneRemove={console.log}
-        onCardRemove={console.log}
-        onLaneRename={console.log}
-        initialBoard={board}
-        allowAddCard={{ on: "bottom" }}
-        onNewCardConfirm={(draftCard) => ({
-          id: new Date().getTime(),
-          ...draftCard,
-        })}
-        onCardNew={console.log}
+      allowRemoveLane
+      allowRemoveCard
+      initialBoard={board}
+      renderCard={CardProject}
       />
     );
   }
@@ -112,35 +105,40 @@ const KanbanBoard = (onClick) => {
           padding: 8,
           backgroundColor: "#FFFEFF",
           boxShadow: "box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;",
-          borderLeft: "8px solid #0094c7"
+          marginBottom: 20,
+          borderLeft: "8px solid #0094c7",
         }}
         position="sticky"
       >
         <Toolbar>
-          <IconButton
-            style={{ color: "black" }}
-            aria-label="open drawer"
-            edge="start"
-            onClick={onClick}
-            sx={{ mr: 2, display: { sm: "none" } }}
+          <Grid
+            container
+            rowSpacing={4}
+            columnSpacing={{ xs: 12, sm: 12, md: 12 }}
           >
-            <MenuIcon />
-          </IconButton>
-
-          <Grid container spacing={0} columns={1}>
-            <Grid item xs={8}>
+            <Grid item xs={9}>
               <Typography
                 variant="h5"
-                noWrap
-                component="div"
-                style={{ color: "#333348", fontWeight: "bolder" }}
-              >
-                Tablero de Proyectos
-              </Typography>
+                style={{ color: "#333348", fontWeight: "bolder", marginTop:15 }}
+              >{`Tablero de proyectos`}</Typography>
             </Grid>
-            <Grid item xs={8}>
-              <Typography variant="h6" noWrap component="div" style={{ color: '#333348', }}>
-                Estados actuales
+            <Grid item xs={2}>
+              <Typography
+                variant="h6"
+                
+                style={{
+                  borderRadius: 10,
+                  width: 300,
+                  backgroundColor: "#C1ECE4",
+                  textAlign: "center",
+                  padding: 10,
+                  marginTop: 5,
+                  color: "black",
+                  fontWeight: "bold",
+                }}
+              >
+                <Icon style={{ fontWeight: "bold", paddingTop: 6 }}>add</Icon>{" "}
+                Nueva Historia
               </Typography>
             </Grid>
           </Grid>
@@ -153,7 +151,7 @@ const KanbanBoard = (onClick) => {
           marginTop: 30,
           padding: 20,
           borderRadius: 20,
-          backgroundColor: '#FFFFFF'
+          backgroundColor: "#FFFFFF",
         }}
       >
         <KanbanBoard />
